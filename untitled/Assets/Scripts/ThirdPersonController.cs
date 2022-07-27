@@ -6,6 +6,8 @@ public class ThirdPersonController : MonoBehaviour
 {
     public CharacterController controller;
     public Transform cam;
+    public HUD hud;
+    public GameObject itemcol;
 
     public float speed = 6f;
     public float turnSmoothTime = 0.1f;
@@ -34,10 +36,16 @@ public class ThirdPersonController : MonoBehaviour
                 float distance = Vector3.Distance(item.transform.position, transform.position);
                 if(distance<=item.radius){
                     item.Interact();
+                    hud.CloseMessagePanel();
                 }
             }
             
         }
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        if(other == item.GetComponent<Collider>())
+            hud.OpenMessagePanel("");
     }
 
 }
