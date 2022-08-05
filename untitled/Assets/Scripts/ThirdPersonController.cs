@@ -71,7 +71,7 @@ public class ThirdPersonController : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        if(other == item.GetComponent<Collider>())
+        if(item!=null && other == item.GetComponent<Collider>())
             hud.OpenMessagePanel("");
     }
 
