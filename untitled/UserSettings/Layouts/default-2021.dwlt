@@ -171,7 +171,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 300}
   m_MaxSize: {x: 16192, y: 24288}
   vertical: 1
-  controlID: 23
+  controlID: 39
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 0
-  controlID: 24
+  controlID: 40
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 25
+  controlID: 41
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -320,8 +320,8 @@ MonoBehaviour:
     y: 710
     width: 1634
     height: 247
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -356,6 +356,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   modes:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -417,8 +418,8 @@ MonoBehaviour:
     vZoomLockedByDefault: 0
     m_HBaseRangeMin: -656.5
     m_HBaseRangeMax: 656.5
-    m_VBaseRangeMin: -344.5
-    m_VBaseRangeMax: 344.5
+    m_VBaseRangeMin: -334
+    m_VBaseRangeMax: 334
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -427,7 +428,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -435,11 +436,11 @@ MonoBehaviour:
     m_DrawArea:
       serializedVersion: 2
       x: 0
-      y: 0
+      y: 21
       width: 1313
-      height: 689
+      height: 668
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 656.5, y: 344.5}
+    m_Translation: {x: 656.5, y: 334}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -447,9 +448,9 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -656.5
-      y: -344.5
+      y: -334
       width: 1313
-      height: 689
+      height: 668
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1313, y: 689}
@@ -683,9 +684,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 96.14102, y: 1.8799505, z: 71.420616}
+    m_Target: {x: 100.91, y: 1.8799505, z: 19.02}
     speed: 2
-    m_Value: {x: 96.14102, y: 1.8799505, z: 71.420616}
+    m_Value: {x: 100.91, y: 1.8799505, z: 19.02}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -732,13 +733,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.13028823, y: 0.08414404, z: -0.008059968, w: -0.98841333}
+    m_Target: {x: -0.23493257, y: 0.060960922, z: -0.011793251, w: -0.9705861}
     speed: 2
-    m_Value: {x: -0.13028823, y: 0.08414404, z: -0.008059968, w: -0.98841333}
+    m_Value: {x: -0.2348051, y: 0.060927846, z: -0.011786852, w: -0.9700595}
   m_Size:
-    m_Target: 50.30193
+    m_Target: 4.4956007
     speed: 2
-    m_Value: 50.30193
+    m_Value: 4.4956007
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -794,8 +795,8 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
+      m_SelectedIDs: d8f9ffff
+      m_LastClickedID: -1576
       m_ExpandedIDs: 1efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -861,7 +862,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Customizable Skybox/Stylized Sky
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 0
@@ -900,10 +901,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 0}
+    scrollPos: {x: 0, y: 61}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000286000002a6000002c6000002e600000306000003260000034600000
+    m_ExpandedIDs: ffffffff00000000286000002a6000002c6000002e600000306000003260000034600000a0600000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
