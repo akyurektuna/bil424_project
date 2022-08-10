@@ -19,7 +19,7 @@ public class ThirdPersonController : MonoBehaviour
     bool isGrounded;
     public float turnSmoothTime = 0.1f;
 
-    public Interactable item = null;
+    public Interactable[] items = new Interactable[2];
 
     float turnSmoothVelocity;
     // Update is called once per frame
@@ -59,20 +59,25 @@ public class ThirdPersonController : MonoBehaviour
 
         //right mouse button to pickup objects
         if(Input.GetKeyDown("e")){
-            if(item != null){
-                float distance = Vector3.Distance(item.transform.position, transform.position);
-                if(distance<=item.radius){
-                    item.Interact();
-                    hud.CloseMessagePanel();
-                }
+            foreach(Interactable item in items){
+                if(item != null){
+                    float distance = Vector3.Distance(item.transform.position, transform.position);
+                    if(distance<=item.radius){
+                        item.Interact();
+                        hud.CloseMessagePanel();
+                    }
+                }    
             }
             
         }
     }
 
     private void OnTriggerEnter(Collider other) {
-        if(item!=null && other == item.GetComponent<Collider>())
-            hud.OpenMessagePanel("");
+        foreach(Interactable item in items){
+            if(item!=null && other == item.GetComponent<Collider>())
+                hud.OpenMessagePanel("");    
+        }
+
     }
 
 }
