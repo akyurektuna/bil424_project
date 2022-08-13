@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class EnemyController : MonoBehaviour
 {
@@ -31,6 +32,8 @@ public class EnemyController : MonoBehaviour
     bool m_PlayerNear;
     bool m_IsPatrol;
     bool m_CaughtPlayer;
+
+    private GameMaster gm;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +50,9 @@ public class EnemyController : MonoBehaviour
         navMeshAgent.isStopped = false;
         navMeshAgent.speed = speedWalk;
         navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
+        
+        // gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
+        // transform.position = gm.lastCheckpointPos;
     }
 
     // Update is called once per frame
@@ -78,15 +84,24 @@ public class EnemyController : MonoBehaviour
 
     void CaughtPlayer(){
         m_CaughtPlayer = true;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Debug.Log("buraya giriyom");
     }
     private void Chasing(){
         m_PlayerNear = false;
         playerLastPosition = Vector3.zero;
         if(!m_CaughtPlayer){
+            //Debug.Log("gordum!!");
             Move(speedRun);
             navMeshAgent.SetDestination(m_PlayerPosition);
+            if(Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) <= 1.3f){
+                CaughtPlayer();
+            }
         }
+        //Debug.Log("distance " + navMeshAgent.remainingDistance);
+
         if(navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance){
+
             if(m_WaitTime <= 0 && !m_CaughtPlayer && Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position)>= 6f){
                 m_IsPatrol = true;
                 m_PlayerNear = false;
@@ -95,6 +110,7 @@ public class EnemyController : MonoBehaviour
                 m_WaitTime = startWaitTime;
                 navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
             }
+
             else{
                 if(Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position)>=2.5f){
                     Stop();

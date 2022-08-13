@@ -18,7 +18,7 @@ public class PlayerPos : MonoBehaviour
     {
         // change this test code for when user dies
        if(Input.GetKeyDown("g")){
-            Debug.Log("e bastin");
+            Debug.Log("checkpoint");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
        } 
     }
