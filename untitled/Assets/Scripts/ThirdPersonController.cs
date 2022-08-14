@@ -22,10 +22,13 @@ public class ThirdPersonController : MonoBehaviour
     public Interactable[] items = new Interactable[2];
 
     float turnSmoothVelocity;
+    void Start(){
+        Cursor.visible = false;
+    }
     // Update is called once per frame
     void Update()
     {
-  isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if(isGrounded && velocity.y < 0)
         {

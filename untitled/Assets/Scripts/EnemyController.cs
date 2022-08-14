@@ -51,8 +51,6 @@ public class EnemyController : MonoBehaviour
         navMeshAgent.speed = speedWalk;
         navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
         
-        // gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
-        // transform.position = gm.lastCheckpointPos;
     }
 
     // Update is called once per frame
@@ -85,7 +83,7 @@ public class EnemyController : MonoBehaviour
     void CaughtPlayer(){
         m_CaughtPlayer = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        Debug.Log("buraya giriyom");
+        Debug.Log("loading from the last checkpoint");
     }
     private void Chasing(){
         m_PlayerNear = false;
@@ -109,6 +107,7 @@ public class EnemyController : MonoBehaviour
                 m_TimeToRotate = timeToRotate;
                 m_WaitTime = startWaitTime;
                 navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
+                Debug.Log("index: " + waypoints[m_CurrentWaypointIndex].position);
             }
 
             else{
